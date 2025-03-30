@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //创建一个正则表达式，检查一个字符串中是否包含a或b:|表示或
+        let reg1=/a|b/;
+        console.log(reg1.test("a"));//true
+        //检查是否有字母：[ab]==a|b,[a-c]==a|b|c
+        let reg2=/[a-z]/;
+        //任意字母 /[A-z]/==/[a-z]/i
+        // /a[des]c/==/adc|aec|asc/
+
+        //[^ab] 除了a和b之外的任意字符
+        //[0-9] 任意数字
+
+        //检查是否有多个a
+        //量词
+        let reg3=/a{2}/;
+        let reg4=/a{2,4}/;//a出现2-4次
+        let reg5=/a{2,}/;//a出现2次以上
+        let reg6=/ab{3}/;
+        let reg7=/(ab){3}/;
+        let reg8=/a+/;//a出现1次以上
+        let reg9=/a*/;//a出现0次以上
+
+        //^表示开头，$表示结尾
+        let reg10=/^a/;//以a开头
+        let reg11=/a$/;//以a结尾
+        let reg12=/^a$/;//只有一个a
+
+        /* 练习
+        手机号的规则
+        */
+        let reg13=/^1[3-9][0-9]{9}$/;
+
+        /* 
+        检查一个字符串是否含有.
+        .表示任意字符
+        转义字符\.
+        \\表示\
+        */
+        let reg14=/\./;
+        console.log("a.\\");//a.\
+
+        /* 
+        \w 匹配字母、数字、下划线。等价于 [A-Za-z0-9_]
+        \W 匹配非字母、数字、下划线。等价于 [^A-Za-z0-9_]
+        \d 匹配数字。等价于 [0-9]
+        \D 匹配非数字。等价于 [^0-9]
+        \s 匹配任何空白字符，包括空格、制表符、换页符等
+        \S 匹配任何非空白字符
+        \b 匹配一个单词边界，也就是指单词和空格间的位置
+        \B 匹配非单词边界
+        */
+        let reg =/\bchild\b/;
+        console.log(reg.test("child"));//true
+        console.log(reg.test("children"));//false
+
+        let str="    hello    ";
+        //去除字符串的空格
+        str = str.replace(/\s/g,"");
+        console.log(str);//hello
+        str = "   hello world   "; 
+        //去除字符串两端的空格
+        //  /^\s*/ 以0个或多个空格开头
+        //  /\s*$/ 以0个或多个空格结尾
+        str = str.replace(/^\s*|\s*$/g,"");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function fun(){
+            alert("函数要执行了");
+
+            for (let index = 0; index < 5; index++) {
+                console.log(index);
+                if (index==2) {
+                    // break; 
+                    // continue;    
+                    return;
+                    // 使用return结束整个函数
+                }
+            }
+
+            alert("函数执行完了");
+        }
+        fun();
+
+
+        // 返回值可以是任意类型
+        function fun1() {
+            return 10;
+        }
+        let a=fun1();
+        console.log(a);
+        // 也可以是一个对象
+        function fun2() {
+            let obj={name:"LiHua"};
+            return obj;
+        }
+        console.log(fun2());
+        let b=fun2();
+        console.log(b.name);
+        // 当然也可以是函数
+        function fun3() {
+            function fun4() {
+                alert("函数返回值也可以是函数");
+            }
+            return fun4;
+        }
+        let c=fun3();
+        c();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

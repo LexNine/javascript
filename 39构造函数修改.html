@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function Person(name,age,gender) {
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            this.sayName=function(){
+                alert(this.name);
+            };
+        }
+
+        let per1=new Person("LiHua",18,"female");
+        let per2=new Person("XiaoMing",19,"male");
+        let per3=new Person("Tom",21,"male");
+
+        console.log(per1);
+        console.log(per2);
+        console.log(per3);
+
+        per1.sayName();
+        per2.sayName();
+        per3.sayName();
+
+        /* 如何让所有实例共享同一个sayName方法 */
+        /* 将sayName方法在全局作用域中定义 */
+        /* 
+        {this.sayName=fun;}
+        function fun() {
+            alert(this.name);
+        } 
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

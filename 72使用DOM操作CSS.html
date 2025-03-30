@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 400px;
+            height: 400px;
+            background-color: red !important;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn01 = document.querySelector('#btn01');
+            var box1 = document.querySelector('#box1');
+            btn01.onclick = function(){
+                box1.style.width = '200px';
+                box1.style.height = '200px';
+                box1.style.backgroundColor = 'blue';
+                /* 
+                CSS的样式名中有连字符，需要转换为驼峰命名法
+                我们通过style属性设置的样式，都是内联样式，优先级最高（HTML中修改）
+                但是内联样式的优先级也是有限制的，!important可以提高优先级，此时JS无法修改
+                */
+            }
+            var btn02 = document.querySelector('#btn02');
+            btn02.onclick=function(){
+                alert(box1.style.width);
+                // 通过style属性获取的样式，只能获取内联样式，不能获取外部样式表和内部样式表,不能获取到css中的样式
+                alert(window.getComputedStyle(box1,null).width);
+                // window.getComputedStyle(元素,伪类)获取元素的最终样式，第二个参数是伪类，一般传null
+            }
+            /* 
+            以下是可见宽度/高度，没有单位默认是px
+            clientWidth: 内容的宽度+左右padding
+            clientHeight: 内容的高度+上下padding
+            offsetWidth: 内容的宽度+左右padding+左右border
+            offsetHeight: 内容的高度+上下padding+上下border
+            */
+            /* 
+            offsetParent: 返回最近的定位父级元素
+            offsetLeft: 当前元素左边框距离offsetParent左边框的距离
+            offsetTop: 当前元素上边框距离offsetParent上边框的距离
+            */
+           /* 
+           scrollWidth: 内容的宽度,包括滚动的部分
+           scrollHeight: 内容的高度
+           scrollLeft: 水平滚动条滚动的距离
+           scrollTop: 垂直滚动条滚动的距离 
+           当scrollHeight-scrollTop=clientHeight时，说明滚动到底部
+           当scrollWidth-scrollLeft=clientWidth时，说明滚动到右边
+           */
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <button id="btn02">点我一下</button>
+    <div id="box1"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        DOM(Document Object Model)文档对象模型
+        1. DOM是什么
+            DOM是一种树形结构，用来表示网页的结构，可以通过js来操作这个树形结构
+        2.节点NODE是什么
+            在DOM中，树形结构的每一个部分都是一个节点
+            -文档节点：整个HTML文档
+            -元素节点：HTML中的标签
+            -文本节点：HTML中的文本
+            -属性节点：HTML中的属性
+        3.节点的属性
+            -nodeName:节点的名称
+            -nodeValue:节点的值
+            -nodeType:节点的类型
+
+        */
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="alert('hello')">I am a button</button>
+    <script>
+        /* 
+        浏览器已经为我们提供了文档节点对象，这个对象是window的一个属性
+        */
+        //获取button对象
+        let btn = document.getElementById("btn");
+        console.log(btn);
+        //修改button的文本
+        btn.innerHTML = "I am a new button";
+        // btn.innerText = "I am a new button"; //innerText不会解析html标签
+        /* 
+        事件：用户和浏览器之间的交互
+        1.事件的三要素
+            -事件源：触发事件的元素
+            -事件：用户和浏览器之间的交互
+            -事件处理程序：事件触发后要执行的代码
+        */
+    </script>
+</body>
+</html>

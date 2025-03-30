@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        Math对象是一个内置的数学对象，它具有属性和方法用于数学常数和函数
+        */
+        /* console.log(Math.PI);//3.141592653589793 大写表示常量 */
+        //Math对象的属性自己查表
+
+        /* console.log(Math.abs(-1));//1 返回一个数的绝对值
+        console.log(Math.ceil(1.1));//2 向上取整
+        console.log(Math.floor(1.9));//1 向下取整
+        console.log(Math.round(1.5));//2 四舍五入 */
+
+        /* console.log(Math.random());//0-1之间的随机数(没有0和1) */
+        for (let i = 0; i < 10; i++) {
+            console.log(Math.random()*10);//0-10之间的随机数(没有0和10)
+            console.log(Math.round(Math.random()*10));//0-10之间的随机整数(有0和10)
+            console.log(Math.round(Math.random()*9)+1);//1-10之间的随机整数(有1和10)
+        }
+        /* Math.round(Math.random()*(max-min)+min);//min-max之间的随机整数(有min和max) */
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

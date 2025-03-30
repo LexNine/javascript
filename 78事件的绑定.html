@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+    <script>
+        window.onload=function(){
+            var btn01=document.getElementById('btn01');
+            btn01.onclick=function(){
+                alert(1);
+            }
+            //这种方法只能绑定一个响应函数
+            /* 
+            addEventListener()方法可以绑定多个响应函数
+            三个参数：
+            1.事件的字符串
+            2.响应函数
+            3.是否在捕获阶段执行，需要一个布尔值，一般都是false，不写也是false
+            */
+            btn01.addEventListener('click',function(){
+                alert(2);
+            });
+            btn01.addEventListener('click',function(){
+                alert(3);
+            });
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">click me</button>
+</body>
+</html>

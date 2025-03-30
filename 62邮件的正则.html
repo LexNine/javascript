@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        电子邮件
+        任意数字字母下划线   .   任意数字字母下划线  @  任意数字字母  .   任意字母（2-5位）   .   任意字母（2-5位）
+        \w{3,}             (\.\w+)*              @   [a-zA-Z0-9]+    (\.[a-zA-Z]{2,5}){1,2}
+        */
+       let emailReg = /^\w{3,}(\.\w+)*@[a-zA-Z0-9]+(\.[a-zA-Z]{2,5}){1,2}$/;
+       let email = "123@abc.com";
+        console.log(emailReg.test(email));//true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

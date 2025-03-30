@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            //获取body标签
+            var body = document.body;
+            console.log(body);
+
+            //获取HTML根标签
+            var html = document.documentElement;
+            console.log(html);
+
+            //获取所有标签
+            var all=document.all;
+            console.log(all);
+
+            //CSS选择器
+            div=document.querySelector(".box1 div");
+            console.log(div);
+            //返回匹配的首个对象
+
+            divs=document.querySelectorAll(".box1 div");
+            //返回匹配的所有对象
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div></div>
+    </div>
+    <div></div>
+</body>
+</html>

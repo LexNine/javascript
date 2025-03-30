@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        基本数据类型
+        string number boolean null undefined
+        引用数据类型
+        object
+        */
+        /* 
+        JS中为我们提供了三个包装类，用于将基本数据类型转换为对象
+        String() Number() Boolean()
+        */
+        let a=123;
+        console.log(typeof a);//number
+        let b=new Number(123);//创建一个Number对象
+        console.log(b);
+        console.log(typeof b);//object
+        let c= new String("hello");
+        console.log(c);
+        console.log(typeof c);//object
+        let d=new Boolean(true);
+        console.log(d);
+        console.log(typeof d);//object
+        
+        /* 
+        实际开发中不用
+        */
+
+        let s=123;
+        s=s.toString();
+        //基本数据类型调用方法时，会临时转换为对象，调用方法后会立即转换为基本数据类型
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        Date对象用于处理日期和时间
+        */
+        let date=new Date();
+        console.log(date);//"2025-02-07T09:57:17.625Z"
+        //如果直接使用构造函数创建Date对象，那么返回的是当前代码执行时的时间
+
+        //创建指定时间的Date对象，需要在构造函数中传入一个表示时间的字符串
+        let date2=new Date("02/07/2025 17:00:00");
+        console.log(date2);//"2025-02-07T09:00:00.000Z"
+
+        /* console.log(date.getDate());//7  返回日期
+        console.log(date.getDay());//5  返回星期几  0-6  0代表星期天
+        console.log(date.getFullYear());//2025  返回年份
+        console.log(date.getHours());//17  返回小时
+        console.log(date.getMinutes());//0  返回分钟
+        console.log(date.getSeconds());//0  返回秒
+        console.log(date.getMilliseconds());//0  返回毫秒 */
+
+        console.log(date2.getTime());//1738918800000  返回时间戳
+        //时间戳是从1970年1月1日0时0分0秒到指定时间的毫秒数
+        let date3=new Date("1970/01/01 00:00:00");
+        console.log(date3.getTime());//-28800000  与格林威治时间的时差
+
+        //获取当前时间的时间戳
+        console.log(Date.now());//1738925738577
+        //利用时间戳计算程序运行时间
+        let start=Date.now();
+        for (let i = 0; i < 100; i++) {
+            console.log(i);
+        }
+        let end=Date.now();
+        console.log("time="+(end-start)+"ms");
+
+
+
+        
+        /* console.log(date.toLocaleString());//2020-7-7 15:47:45
+        console.log(date.toString());//Tue Jul 07 2020 15:47:45 GMT+0800 (中国标准时间)
+        console.log(date.toDateString());//Tue Jul 07 2020
+        console.log(date.toTimeString());//15:47:45 GMT+0800 (中国标准时间)
+        console.log(date.toLocaleDateString());//2020-7-7
+        console.log(date.toLocaleTimeString());//15:47:45
+        console.log(date.toUTCString());//Tue, 07 Jul 2020 07:47:45 GMT
+        console.log(date.toISOString());//2020-07-07T07:47:45.000Z
+        console.log(date.valueOf());//1594111665000  返回时间戳
+        console.log(date.getTime());//1594111665000  返回时间戳
+    
+        console.log(date.getTimezoneOffset());//-480  返回时区偏移
+        console.log(date.getTimezoneOffset()/60);//-8  返回时区偏移
+        console.log(date.getUTCFullYear());//2020
+        console.log(date.getUTCMonth());//6
+        console.log(date.getUTCDate());//7
+        console.log(date.getUTCDay());//2
+        console.log(date.getUTCHours());//7
+        console.log(date.getUTCMinutes());//47
+        console.log(date.getUTCSeconds());//45
+        console.log(date.getUTCMilliseconds());//0
+        console.log(date.setFullYear(2021));//返回时间戳
+        console.log(date.setMonth(7));//返回时间戳
+        console.log(date.setDate(8));//返回时间戳
+        console.log(date.setHours(16));//返回时间戳 */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

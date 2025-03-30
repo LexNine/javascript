@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 开启绝对定位 */
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var box1=document.querySelector('#box1');
+            document.onmousemove=function(e){
+                var x=e.clientX;
+                var y=e.clientY;
+                box1.style.left=x+'px';
+                box1.style.top=y+'px';
+                //但是div是相对内容的，鼠标是相对窗口的
+                //pageX,pageY是相对页面的
+            }
+            var box2=document.querySelector('#box2');
+            box2.onmousemove=function(e){
+                e.cancelBubble=true;
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box2" style="width:200px; height: 200px; background-color: #bfa;"></div>
+    <div id="box1"></div>
+</body>
+</html>

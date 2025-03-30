@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* let fun=new Function("console.log('hello')");
+        fun(); */
+        // 感觉这个很难用，不如下面的
+        function fun1() {
+            console.log('hello,fun1');
+        }
+        fun1();
+        console.log(fun1);
+        /* 函数也是对象所以他也有属性 */
+        fun1.name="LiHua";
+        console.log(fun1.name);
+        // 输出fun1因为name是JS规定的只读属性不能修改
+        fun1.hello="你好";
+        console.log(fun1.hello);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

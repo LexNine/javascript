@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function fun() {
+            alert("I am fun");
+        }
+        /* 
+        call() 方法在使用一个指定的this值和若干指定的参数值的前提下调用某个函数或方法。
+        apply() 方法在调用一个函数时，能够改变函数体内this的指向。
+        */
+        fun();//I am fun
+        fun.call();//I am fun
+        fun.apply();//I am fun
+
+        let obj={
+            name:'zhangsan',
+            sayName:function(){
+                alert(this.name);
+            }
+        };
+        fun.call(obj);//I am fun
+
+        function fun1() {
+            alert(this);
+        }
+        fun1();//[object Window]
+        fun1.call(obj);//[object Object]
+        fun1.apply(obj);//[object Object]
+        //call()和apply()可以将一个对象指定为第一个参数，这个对象将会成为函数中的this对象
+
+        obj.sayName();//zhangsan
+        let obj2={
+            name:'lisi'
+        };
+        obj.sayName.call(obj2);//lisi
+
+        /* 
+        call()和apply()的区别
+        */
+        function fun2(a,b) {
+            console.log("a="+a);
+            console.log("b="+b);
+        }
+        fun2.call(obj);//a=undefined b=undefined
+        fun2.call(obj,1,2);//a=1 b=2
+        //call()方法的第一个参数是要绑定给this的值，后面的参数是函数调用时传入的参数
+        fun2.apply(obj,1,2);//报错
+        //apply()方法的第一个参数是要绑定给this的值，第二个参数是一个数组，数组中的元素是函数调用时传入的参数
+        fun2.apply(obj,[1,2]);//a=1 b=2
+
+        /* 
+        this的指向
+        1.在全局函数中，this指向window
+        2.在对象方法中，this指向调用该方法的对象
+        3.在构造函数中，this指向实例对象
+        4.使用call()和apply()方法，this指向call()和apply()方法的第一个参数
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

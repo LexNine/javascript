@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #info{
+            width: 300px;
+            height: 500px;
+            background-color: #bfa;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        /* 
+        设置当滚动条到底时才能勾选，勾选后才能点击按钮
+        */
+        window.onload=function(){
+            /* 当滚动条滚动时检查滚动 */
+            var info = document.querySelector('#info');
+            var check=document.querySelector("input");
+            var btn=document.querySelector("button");
+            info.onscroll = function(){
+                if(info.scrollHeight-info.scrollTop == info.clientHeight){
+                    check.disabled = false;
+                }
+            }
+            check.onclick = function(){
+                if(check.checked){
+                    btn.disabled = false;
+                }else{
+                    btn.disabled = true;
+                }
+            }
+            btn.onclick = function(){
+                alert("注册成功");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Hello,welcome</h3>
+    <p id="info">
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+        亲爱的用户，请仔细阅读以下协议，点击“同意”按钮表示您已经阅读并同意以下协议。
+    </p>
+    <input type="checkbox" disabled="disabled">我已仔细阅读协议
+    <button disabled="disabled">注册</button>
+</body>
+</html>

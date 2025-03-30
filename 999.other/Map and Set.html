@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //创建字典
+        let map=new Map();
+        /* 
+        let m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+        m.get('Michael'); // 95
+        */
+        //添加元素
+        map.set("name","LiHua");//键值对,键名的类型不会转换
+        map.set(1,"one");
+        //获取元素
+        console.log(map.get("name"));//LiHua
+        console.log(map.get(1));//one
+        //判断是否存在
+        console.log(map.has("name"));//true
+        //遍历字典
+        map.forEach((value,key)=>{
+            console.log(key,value);
+        });
+        //或者
+        for (const [key, value] of map) {
+            console.log(key,value);
+        }
+        //删除元素
+        map.delete("name");
+        //清空字典
+        map.clear();
+        //获取字典长度
+        console.log(map.size);//0
+        
+    </script>
+    <script>
+        /* 
+        Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。
+
+要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set：
+
+let s1 = new Set(); // 空Set
+let s2 = new Set([1, 2, 3]); // 含1, 2, 3
+重复元素在Set中自动被过滤：
+
+let s = new Set([1, 2, 3, 3, '3']);
+s; // Set {1, 2, 3, "3"}
+注意数字3和字符串'3'是不同的元素。
+
+通过add(key)方法可以添加元素到Set中，可以重复添加，但不会有效果：
+
+s.add(4);
+s; // Set {1, 2, 3, 4}
+s.add(4);
+s; // 仍然是 Set {1, 2, 3, 4}
+通过delete(key)方法可以删除元素：
+
+let s = new Set([1, 2, 3]);
+s; // Set {1, 2, 3}
+s.delete(3);
+s; // Set {1, 2}
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

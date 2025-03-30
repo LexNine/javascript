@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function isou(num) {
+            return num%2==0;
+        }
+        console.log("result="+isou(3));
+
+        function sayHello(name,age,gender,address) {
+            console.log("我是"+name+"，今年我"+age+"岁了，我是一个"+gender+"性，我住在"+address+"。");
+        }
+        sayHello("孙悟空",18,"男","花果山")
+        // 参数太多来传对象
+        let obj={
+            name:"SunWukong",
+            age :18,
+            gender:"male",
+            address:"HuaGuoShan"
+        }
+        function sayHello1(o) {
+            console.log("我是"+o.name+"，今年我"+o.age+"岁了，我是一个"+o.gender+"，我住在"+o.address+"。");
+        }
+        sayHello1(obj);
+
+        // 实参也可以是函数
+        function fun(a) {
+            console.log("a="+a);
+        }
+        function sum(a,b) {
+            return a+b;
+        }
+        fun(sum(1,1));
+        fun(sum);
+        // 带括号是结果，不带括号是内容
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

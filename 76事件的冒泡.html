@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            
+        }
+        #box1 span{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+
+        window.onload=function(){
+            /* 
+            事件的冒泡（bubble）
+            指的是事件从最具体的元素开始，然后逐级向上传播到较为不具体的节点（文档）。
+            */
+            var span=document.querySelector("#box1 span");
+
+            span.onclick=function(e){
+                e.cancelBubble=true;//阻止冒泡
+                alert("span");
+            }
+            var box1=document.querySelector("#box1");
+            box1.onclick=function(e){
+                e.cancelBubble=true;
+                alert("div");
+            }
+            document.body.onclick=function(){
+                alert("body");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        I am box1
+        <span>I am span</span>
+    </div>
+</body>
+</html>

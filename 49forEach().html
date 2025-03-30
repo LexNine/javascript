@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* forEach()方法 */
+        // 语法：数组.forEach(function(value,index,array){})
+        // value:数组中的元素
+        // index:数组中的索引
+        // array:数组本身
+        let arr=[1,2,3,4,5];
+        arr.forEach(function(value,index,array){
+            console.log("元素值"+value);
+            console.log("索引值"+index);
+            console.log("数组本身"+array);
+        });
+        //forEach()方法需要一个函数作为参数，这种函数叫做回调函数，由我们创建，由浏览器调用
+        //如果回调函数的参数数量少于三个，依次是value,index,array
+        //如果回调函数的参数数量多于三个，多余的参数为undefined
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

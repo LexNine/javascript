@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 条件运算符也叫三元运算符 -->
+    <!-- 语法
+    条件表达式?语句1:语句2;
+    首先对条件表达式求值，为true执行语句1并返回结果，反之则执行语句2并返回结果 
+    如果条件表达式结果为非布尔值，将会先转化为布尔值
+    -->
+    <script>
+        var a=10;
+        var b=20;
+        a>b?alert("a more"):alert("b more");
+
+        // 获取a b中的最大值
+        var max=a>b?a:b;
+        console.log("max="+max);
+
+        var c=50;
+        max=max>c?max:c;
+        console.log("max="+max);//获取a b c 中的最大值
+        // 或者
+        max=a>b?a>c?a:c:b>c?b:c;
+        // max=a>b?(a>c?a:c):(b>c?b:c);  不推荐使用，可读性太差，非要写把括号加上
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

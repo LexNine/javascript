@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let obj={
+            name:"LiHua",
+            age:18,
+            gender:"male",
+            sayName:function(){
+                alert(this.name);
+            }
+        };
+
+        /* 使用工厂方法创建对象 */
+
+        function createPerson(name,age,gender) {
+            // create a new objecrt
+            // let obj=new Object();
+            let obj={};
+            obj.name=name;
+            obj.age=age;
+            obj.gender=gender;
+            obj.sayName=function(){
+                alert(this.name);
+            };
+            return obj;
+        }
+        let obj2=createPerson("XiaoMing",19,"male");
+        console.log(obj2);
+        obj2.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

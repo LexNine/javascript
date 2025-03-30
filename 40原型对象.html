@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        {this.sayName=fun;}
+        function fun() {
+            alert(this.name);
+        } 
+        */
+        /* 将函数定义在全局作用域，污染了全局作用域的命名空间，也不安全 */
+        /* 原型prototype:
+        1.每个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，即原型对象；当函数以构造函数的形式调用时，
+          其实例中会有一隐藏属性__proto__指向构造函数的原型对象
+        2.这个对象的用途是包含可以由同一类所有实例共享的属性和方法，但是每个实例的属性和方法是独立的
+        */
+        function Person0() {
+
+        }
+        let per01=new Person0();
+        let per02=new Person0();
+        console.log(Person0.prototype);
+        console.log(per01.__proto__);
+        console.log(per02.__proto__);
+
+        // 向原型对象中添加属性
+        Person0.prototype.name="LiHua";
+        // 当我们访问对象中的属性时，会先在对象中寻找，如果找到则返回，如果没有则会去原型对象中寻找
+        console.log(per01.name);
+        per01.name="XiaoMing";
+        console.log(per01.name);
+        // 向原型对象中添加方法
+        Person0.prototype.sayName=function(){
+            alert(this.name);
+        }
+        per01.sayName();
+
+        /* 练习 */
+        function Person(name,age,gender) {
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+        }
+        Person.prototype.sayName=function(){
+            console.log("Hi,my name is "+this.name+",my age is "+this.age+",my gender is "+this.gender+"!");
+        }
+        let per1=new Person("LiHua",18,"female");
+        let per2=new Person("XiaoMing",19,"male");
+        let per3=new Person("Tom",21,"male");
+        per1.sayName();
+        per2.sayName();
+        per3.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

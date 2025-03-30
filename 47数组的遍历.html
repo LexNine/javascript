@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 数组的遍历 */
+        let arr=[1,2,3,4,5];
+        // for循环
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        // for in遍历
+        // 语法：for(let 索引 in 对象){}
+        for (const n in arr) {
+            console.log("索引值"+n);
+            console.log("元素值"+arr[n]);
+        }
+        // for of遍历
+        // 语法：for(let 元素 of 对象){}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

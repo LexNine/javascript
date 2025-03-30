@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 与C语言一样 -->
+    <!--  ！逻辑非  ||逻辑或  &&逻辑与 -->
+    <!-- 对布尔值运算（可以对一个非布尔值去两次非化为布尔值） -->
+    <script>
+        true&&alert("123");
+        // 第一个值为true，会检查第二个值（执行），反之则不会；逻辑或同理
+
+    </script>
+    <!-- 非布尔值的与或运算 -->
+     <!-- 回先将其转换为布尔值再运算，并且返回原值 -->
+    <script>
+        var result=1&&2;
+        // 第一项为true，则返回值为第二项“2”
+        var result=NaN&&0;
+        // 第一项为false,则返回值为第一项“NaN”
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

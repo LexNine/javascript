@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 构造函数习惯上首字母大写 */
+        function Person0() {
+            alert(this);//在此this就是per
+            this.name="LiHua";
+        }
+        /* 构造函数和普通函数的区别是调用方式不同，构造函数需要使用new关键字来调用 */
+        let per=new Person0();
+        console.log(per);
+        /* 
+        构造函数的执行流程
+        1.立即创建一个新的对象
+        2.将新建的对象设置为函数中的this
+        3.逐行执行函数中的代码
+        4.将新建的对象作为返回值返回
+        */
+        // 使用同一个构造函数创建的对象称之为同一类对象，也将同一个构造函数称为一个类，将通过一个构造函数创建的对象，称为该类的实例
+        // 使用instanceof可以检查一个对象是否是这个类的实例
+        function Person(name,age,gender) {
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            this.sayName=function(){
+                alert(this.name);
+            };
+        }
+
+        let per1=new Person("LiHua",18,"female");
+        let per2=new Person("XiaoMing",19,"male");
+        let per3=new Person("Tom",21,"male");
+
+        console.log(per1);
+        console.log(per2);
+        console.log(per3);
+
+        per1.sayName();
+        per2.sayName();
+        per3.sayName();
+
+        console.log(per1 instanceof Person);
+        console.log(per1 instanceof Object);
+        // 所有对象都是object的实例
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

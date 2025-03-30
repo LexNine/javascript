@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        onload事件：当页面加载完成后触发
+        */
+        window.onload = function(){
+            let btn = document.getElementById("btn");
+            btn.onclick = function(){
+                alert("hello");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">i am a button</button>
+    <!-- 
+    写在上面方便管理，写在下面利于加载，其实差别不大
+    -->
+</body>
+</html>

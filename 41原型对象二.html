@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 创建一个构造函数 */
+        function Person0(){
+
+        }
+        let per01=new Person0();
+        Person0.prototype.name="LiHua";
+        console.log(per01.name);
+        console.log("name" in per01);//true
+        console.log(per01.hasOwnProperty("name"));//false
+        console.log(per01.__proto__.hasOwnProperty("name"));//true
+
+        /* hasOwnProperty不存在于原型对象中而是在原型对象的原型对象里 */
+        console.log(per01.__proto__.hasOwnProperty("hasOwnProperty"));//false
+        console.log(per01.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));//true
+
+        /* 原型链的最顶端是Object.prototype，Object的原型没有原型 */
+        console.log(per01.__proto__.__proto__.__proto__);//null
+
+        /* 原型链的查找机制 */
+        /* 当我们访问对象中的属性时，会先在对象中寻找，如果找到则返回，如果没有则会去原型对象中寻找，
+        如果找到则返回，如果没有则会去原型的原型中寻找，直到最顶端Object为止,Object没有则返回undefined */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var btn=document.querySelector('button');
+            btn.onclick=function(){
+                var ul=document.querySelector('#ul');
+                var li=document.createElement('li');
+                var a=document.createElement('a');
+                a.href='javascript:;';
+                a.innerHTML='新建的超链接';
+                a.className='link';
+                li.appendChild(a);
+                ul.appendChild(li);
+                //新创建的超链接要重新绑定单击响应函数
+            }
+            //利用冒泡解决
+            var ul=document.querySelector('#ul');
+            ul.onclick=function(e){
+                
+                    /* alert('超链接被单击了'); */
+                    //但是ul的范围比a大，所以要判断一下
+                    /* 
+                    target是事件的目标对象，也就是触发事件的对象
+                    currentTarget是事件的当前对象，也就是绑定事件的对象
+                    */
+                    if (e.target.className=='link') {
+                        alert('超链接被单击了');
+                    }
+                
+            }
+            //这叫事件的委托
+            /* 
+            为每一个超链接都绑定单击响应函数
+            */
+            /* var allA=document.getElementsByTagName('a');
+            for(var i=0;i<allA.length;i++){
+                allA[i].onclick=function(){
+                    alert('超链接被单击了');
+                }
+            } */
+        }
+    </script>
+</head>
+<body>
+    <button>创建一个超链接</button>
+    <ul id="ul" style="background-color: #bfa;">
+        <li><a href="javascript:;" class="link">超链接一</a></li>
+        <li><a href="javascript:;" class="link">超链接二</a></li>
+        <li><a href="javascript:;" class="link">超链接三</a></li>
+    </ul>
+</body>
+</html>

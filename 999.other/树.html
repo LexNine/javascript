@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let tree={
+            val:'a',
+            children:[
+                {
+                    val:'b',
+                    children:[
+                        {
+                            val:'d',
+                            children:[]
+                        },
+                        {
+                            val:'e',
+                            children:[]
+                        }
+                    ]
+                },
+                {
+                    val:'c',
+                    children:[
+                        {
+                            val:'f',
+                            children:[]
+                        },
+                        {
+                            val:'g',
+                            children:[]
+                        }
+                    ]
+                }
+            ]
+        };
+        //深度优先遍历
+        function dfs(tree){
+            console.log(tree.val);
+            tree.children.forEach(dfs);
+        }
+        dfs(tree);
+        //广度优先遍历
+        function bfs(tree){
+            let queue=[tree];
+            while(queue.length>0){
+                let node=queue.shift();
+                console.log(node.val);
+                node.children.forEach(child=>{
+                    queue.push(child);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

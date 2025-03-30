@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /*对象分为三种
+        1.内建对象
+        2.宿主对象
+        3.自定义对象
+        之前研究的基本都是自定义对象 
+        */
+        /* 数组 */
+        // 数组是一种特殊的对象，用来存储多个值
+        // 数组中的值称为元素，数组使用数字作为索引(index)操作元素
+        
+        //创建数组对象
+        let arr=new Array();
+        console.log(arr);
+        console.log(typeof arr);//object
+        //向数组中添加元素
+        arr[0]=1;
+        arr[1]=2;
+        arr[2]=3;
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr[3]);//undefined
+        //数组的长度
+        console.log(arr.length);//3
+        //对于非连续数组，length属性不一定等于元素个数
+        arr[5]=6;
+        console.log(arr.length);//6
+        console.log(arr);
+        //length的修改
+        arr.length=2;
+        console.log(arr);
+        //向数组的最后一个位置添加元素：length的值就是最大索引+1
+        arr[arr.length]=3;
+        console.log(arr);
+        
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="script.js">
+        // 可以在头文件里也可以在外部文件里
+    </script>
+    <script>
+        alert("我是内部代码");
+        // 内部外部要分开
+    </script>
+
+</head>
+<body>
+    <!-- 可以将JS代码编写在标签的onclick属性中 -->
+    <button onclick="alert('~~~~');">click me</button>
+
+    <!-- 可以写在超链接的herf中 -->
+    <a href="javascript:alert('让你点你就点');">点我一下啊</a>
+    <a href="javascript:;">空语句</a>
+
+    <!-- 行为与结构耦合，不方便 -->
+</body>
+</html>

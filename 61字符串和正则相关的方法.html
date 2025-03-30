@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let str="1a2c3x5b2b";
+
+        console.log(str.split(3));//[ '1a2c', 'x5b2b' ]
+        //根据任意字母分割
+        console.log(str.split(/[a-z]/));//[ '1', '2', '3', '5', '2', '2', '' ]
+
+        //search() 检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串
+        console.log(str.search("2c"));//3  返回第一个匹配的位置
+        console.log("aaa abc adc".search(/a[db]c/));//4
+        //search() 只能返回第一个匹配的位置，不能全局匹配
+
+        //match() 检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串
+        console.log(str.match(/[a-z]/));//[ 'a', index: 1, input: '1a2c3x5b2b', groups: undefined ]
+        console.log(str.match(/[a-z]/g));//[ 'a', 'c', 'x', 'b', 'b' ]  g全局匹配
+        console.log("a12ckH5sD".match(/[a-z]/gi));//[ 'a', 'c', 'k', 's', 'D' ] gi全局匹配，忽略大小写
+
+        //replace(被替换，新内容) 替换字符串中的子字符串 或 替换与正则表达式匹配的子字符串
+        console.log(str.replace("2","a"));//1aac3x5b2b 只替换第一个
+        console.log(str.replace(/2/g,"a"));//1aac3x5bab 全局替换
+        console.log(str.replace(/[a-z]/g,""));//12352  删除所有字母
+        
+        //split() 字符串转数组
+        console.log("hello".split(""));//[ 'h', 'e', 'l', 'l', 'o' ]
+        console.log("hello".split("l"));//[ 'he', '', 'o' ]  以l为分隔符 自动全局匹配
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

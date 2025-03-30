@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //二叉树是每个节点最多有两个子树的树结构
+        let tree={
+            val:'a',
+            left:{
+                val:'b',
+                left:{
+                    val:'d',
+                    left:null,
+                    right:null
+                },
+                right:{
+                    val:'e',
+                    left:null,
+                    right:null
+                }
+            },
+            right:{
+                val:'c',
+                left:{
+                    val:'f',
+                    left:null,
+                    right:null
+                },
+                right:{
+                    val:'g',
+                    left:null,
+                    right:null
+                }
+            }
+
+        }
+        //前序遍历 根左右 a b d e c f g
+        //递归实现
+        function preorder(tree){
+            if(tree){
+                console.log(tree.val);
+                preorder(tree.left);
+                preorder(tree.right);
+            }
+        }
+        //迭代实现
+        function preorder1(tree){
+            if(!tree) return;
+            let stack=[tree];
+            while(stack.length>0){
+                let node=stack.pop();
+                console.log(node.val);
+                if(node.right) stack.push(node.right);
+                if(node.left) stack.push(node.left);
+            }
+        }
+        //中序遍历 左根右 d b e a f c g
+        //递归实现
+        function inorder(tree){
+            if(tree){
+                inorder(tree.left);
+                console.log(tree.val);
+                inorder(tree.right);
+            }
+        }
+        //迭代实现
+        function inorder1(tree){
+            if(!tree) return;
+            let stack=[];
+            let node=tree;
+            while(stack.length>0||node){
+                while(node){
+                    stack.push(node);
+                    node=node.left;
+                }
+                node=stack.pop();
+                console.log(node.val);
+                node=node.right;
+            }
+        }
+        //后序遍历 左右根 d e b f g c a
+        //递归实现
+        function postorder(tree){
+            if(tree){
+                postorder(tree.left);
+                postorder(tree.right);
+                console.log(tree.val);
+            }
+        }
+        //迭代实现
+        function postorder1(tree){
+            if(!tree) return;
+            let stack1=[tree];
+            let stack2=[];
+            while(stack1.length>0){
+                let node=stack1.pop();
+                stack2.push(node);
+                if(node.left) stack1.push(node.left);
+                if(node.right) stack1.push(node.right);
+            }
+            while(stack2.length>0){
+                console.log(stack2.pop().val);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

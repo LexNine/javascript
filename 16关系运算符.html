@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 通过关系运算符可以比较两个值的大小关系
+        如果成立返回true，否则返回false
+        >  <
+        >= <=
+        */
+       var result=5>10;
+       console.log(result);
+       /* 非数值与数值比较：转为数字
+       任何值和NaN比较都是false
+       两边都是字符串，比较其第一位unicode
+        编码，如果一样再比较下一位
+       */
+      /* 
+      如果要比较两个字符串类型的数字，可能会得到不可预期的结果
+      （"11123555"<"5"）:true
+      所以在比较两个字符串类型数字一定要转型
+      （"11212233"< +"5"）:false
+      */
+     console.log(typeof +"5");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

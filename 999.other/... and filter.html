@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* ...的用法 */
+        //1.展开
+        // 示例 1：展开数组
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = [...arr1, ...arr2]; // [1, 2, 3, 4]
+
+// 示例 2：函数调用时展开数组参数
+function sum(a, b, c) {
+  return a + b + c;
+}
+const nums = [1, 2, 3];
+sum(...nums); // 等同于 sum(1, 2, 3) → 6
+
+// 示例 3：展开对象（ES2018+）
+const obj1 = { x: 1, y: 2 };
+const obj2 = { ...obj1, z: 3 }; // { x: 1, y: 2, z: 3 }
+        //2.剩余
+        // 示例 1：函数参数收集剩余值
+function logArgs(a, ...rest) {
+  console.log(a);    // 输出第一个参数
+  console.log(rest); // 输出剩余参数组成的数组
+}
+logArgs(1, 2, 3); // a=1, rest=[2, 3]
+
+// 示例 2：解构赋值时收集剩余值
+const [first, ...others] = [1, 2, 3];
+console.log(first);  // 1
+console.log(others); // [2, 3]
+
+// 示例 3：对象解构时收集剩余属性
+const { x, ...restProps } = { x: 1, y: 2, z: 3 };
+console.log(x);         // 1
+console.log(restProps); // { y: 2, z: 3 }
+    </script>
+    <script>
+        /* filter用法 */
+        const newArray = array.filter(callback(element, index, array) {
+        // 返回 true 保留该元素，false 则过滤掉
+        }, thisArg);
+        /* 
+        参数：
+
+callback：用于测试每个元素的函数，返回 true 或 false。
+
+element：当前处理的元素。
+
+index（可选）：当前元素的索引。
+
+array（可选）：调用 filter 的原数组。
+
+thisArg（可选）：执行 callback 时使用的 this 值（一般很少用）。
+
+返回值：一个新的数组，包含所有通过测试的元素。
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

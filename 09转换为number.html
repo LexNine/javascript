@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        方法一：调用number()函数
+            空格字符串转化为0，非纯数字转为NaN
+            布尔值转为0和1
+            null转为0
+            udefined转为NaN
+        方法二：字符串转为数字类型
+            parseInt();把字符串转为整数,从左至右提取直至非数字
+            parseFloat();把字符串转为浮点数
+        */
+       var a="123";
+       a= Number(a);
+       console.log(typeof a);
+       console.log(a);
+
+       var b=true;
+       b= Number(b);
+       console.log(typeof b);
+       console.log(b);
+
+       var c=null;
+       c= Number(c);
+       console.log(typeof c);
+       console.log(c);
+
+       a="123px222";
+       a=parseInt(a);
+       console.log(typeof a);
+       console.log(a);
+
+       b="123.456px";
+       b=parseFloat(b);
+       console.log(typeof b);
+       console.log(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

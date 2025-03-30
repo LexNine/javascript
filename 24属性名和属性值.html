@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let obj=new Object();
+        obj.name="LiHua";
+        /* 
+        属性名：不强制要求遵守标志符的规范，想用啥用啥但是尽量规范
+        如果要使用特殊属性名：对象["属性名"]=属性值；
+        这种访问方式更加灵活
+        */
+        obj["123"]=456;
+        console.log(obj["123"]);
+
+        /* 
+        属性值：可以是任意类型的数据
+        */
+        let obj1={name:"XiaoMing",gender:"male",age:20};
+        obj["special"]=obj1;
+        let n="special";
+        console.log(obj[n]);
+
+        /* in运算符
+        可以检查一个对象中是否含有指定的属性，有则返回true,也可以检查数组索引
+        */
+
+        console.log("age" in obj)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

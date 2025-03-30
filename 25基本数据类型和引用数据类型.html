@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 基本：number boolean string null undefined */
+        /* 引用： object */
+        let obj=new Object();
+        obj.name="LiHua";
+        let obj1=obj;
+        obj.name="XiaoMing";
+        console.log(obj.name);
+        console.log(obj1.name);//两个显示一样，指针特性？
+
+        let obj2=new Object();
+        let obj3=new Object();
+        obj2.name="bin";
+        obj3.name="bin";
+        console.log(obj2==obj3);//两个存的地址不一样，就算地址指向的内存中内容一样也相等
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

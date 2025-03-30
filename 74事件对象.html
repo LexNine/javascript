@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #areaDiv{
+            width: 500px;
+            height: 500px;
+            background-color: #f00;
+        }
+        #showMsg{
+            width: 100px;
+            height: 30px;
+            background-color: #0f0;
+        }
+    </style>
+    <script>
+        /* 
+        实现功能：当鼠标在div上移动时，显示鼠标的坐标
+        */
+        window.onload=function(){
+            var areaDiv = document.querySelector('#areaDiv');
+            var showMsg = document.querySelector('#showMsg');
+            areaDiv.onmousemove = function(e){
+                /* 
+                onmousemove事件对象e中有clientX和clientY属性，表示鼠标相对于浏览器窗口的坐标
+                */
+                var x = e.clientX;
+                var y = e.clientY;
+                showMsg.innerHTML = 'x:'+x+' y:'+y;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="areaDiv"></div>
+    <div id="showMsg"></div>
+</body>
+</html>

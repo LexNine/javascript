@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var scout=prompt("一个字符串");
+        // 弹出一个提示框，输入的内容作为函数的值返回
+        /* break与continue :break是结束当前循环，continue是跳过当次循环*/
+        /* 可以为循环语句创建一个lable，来标识当前循环 */
+        console.time("name");
+        outer:
+        for(let i=0;i<5;i++){
+            console.log("@外层循环"+i);
+            for(let j=0;j<5;j++){
+                break outer;
+                console.log("@内部循环"+j);
+            }
+        }
+        console.timeEnd("name");//显示一段程序运行时间
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let arr=[1,2,3];
+        /* 
+        concat() 方法用于连接两个或多个数组。
+        */
+        let arr2=[4,5,6];
+        let arr3=arr.concat(arr2);
+        console.log(arr3);//[1,2,3,4,5,6]
+        console.log(arr.concat(arr2,7,8));//[1,2,3,4,5,6,7,8]
+
+        /* 
+        join() 方法用于把数组中的所有元素放入一个字符串。
+        */
+        console.log(arr3.join());//1,2,3,4,5,6
+        console.log(arr3.join(''));//123456
+        console.log(arr3.join('-'));//1-2-3-4-5-6
+        //指定一个字符串作为分隔符，将数组中的所有元素连接成一个字符串,不指定分隔符默认为逗号
+        let arr4=['a','b','c','d'];
+        console.log(arr4.join);//a,b,c,d
+        console.log(arr4.join(''));//abcd
+
+        /* 
+        reverse() 方法用于颠倒数组中元素的顺序。该方法会改变原来的数组，也可以返回一个新的数组。
+        */
+        let arr5=arr4.reverse();
+        console.log(arr5);//[ 'd', 'c', 'b', 'a' ]
+        console.log(arr4);//[ 'd', 'c', 'b', 'a' ]
+
+        /* 
+        sort() 方法用于对数组的元素进行排序(默认按照Unicode编码)。该方法会改变原来的数组，也可以返回一个新的数组。
+        */
+        let arr6=[1,5,6,3,2];
+        console.log(arr6.sort());//[1, 2, 3, 5, 6]
+        console.log(arr6);//[1, 2, 3, 5, 6]
+        let arr7=[1,5,6,3,2,10,20,100,50];
+        console.log(arr7.sort());//[1, 10, 100, 2, 20, 3, 5, 50, 6]  纯数字数组也会按照Unicode编码排序
+        console.log(arr7.sort((a,b)=>a-b));//[1, 2, 3, 5, 6, 10, 20, 50, 100]  从小到大排序
+        //等同于
+        console.log(arr7.sort(function(a,b){
+            return a-b;//返回正数交换位置
+        }));
+        console.log(arr7.sort((a,b)=>b-a));//[100, 50, 20, 10, 6, 5, 3, 2, 1]  从大到小排序
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

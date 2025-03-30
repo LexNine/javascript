@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 数组的字面量 */
+        // 数组的字面量是一种简单的方式来创建数组
+        // 使用[]来表示数组，数组中的元素用逗号分隔
+        // 创建数组对象
+        let arr=[1,2,3,4,5];
+        console.log(arr);
+        
+        let arr1=new Array(1,2,3,4,5);
+        console.log(arr1);
+        console.log(arr==arr1);//false  两个数组对象的地址不同
+        let arr2=new Array(5);//创建一个长度为5的数组
+        //所以这种方法不能字面量创建一个单元素数组，不常用
+
+        //数组中的元素可以是任意类型
+        let arr3=[1,"hello",true,null,undefined];
+        console.log(arr3);
+
+        //也可以是对象
+        let obj={name:"LiHua",age:18};
+        arr3[arr3.length]=obj;
+        console.log(arr3);
+        console.log(arr3[arr3.length-1]);
+        console.log(arr3[arr3.length-1].name);
+
+        //也可以是函数
+        let arr4=[1,2,3,function(){
+            alert("hello");
+        }];
+        arr4[arr4.length-1]();
+
+        //数组里也可以放数组：二维数组
+        let arr5=[[1,2,3],[4,5,6],[7,8,9]];
+        console.log(arr5[1]);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

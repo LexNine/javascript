@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function Person(name,age,gender) {
+            this.name=name;
+            this.age=age;
+        }
+
+        let per1=new Person("LiHua",18);
+        let per2=new Person("XiaoMing",19);
+        let per3=new Person("Tom",21);
+        let per4=new Person("Jerry",10);
+        let per5=new Person("Jack",30);
+
+        let perArr=[per1,per2,per3,per4,per5];
+        function pa(perArr) {
+            let per18=[];
+            for (let i = 0; i < perArr.length; i++) {
+                if(perArr[i].age>=18){
+                    per18.push(perArr[i]);
+                }
+            }
+            return per18;
+        }
+        console.log(pa(perArr));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

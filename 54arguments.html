@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+        arguments是参数数组，是一个类数组对象，可以通过索引访问参数，也可以通过length属性获取参数个数
+        在调用函数时，浏览器每次都会传递两个隐式参数：arguments（封装实参的对象）和this（函数的上下文对象）
+        */
+        function fun() {
+            console.log(arguments);
+            console.log(Array.isArray(arguments));//false
+            console.log(arguments.length);
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+            console.log(arguments.callee);//[Function: fun]
+        }
+        fun("hello",1,true);//{ '0': 'hello', '1': 1, '2': true } 3 hello 1 true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
