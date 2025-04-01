@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        let oInput=document.querySelector('input');
+        oInput.oninput=debounce(function(){
+            console.log(this.value);
+        },1000);
+        function debounce(fn,delay){
+            let timer=null;
+            return function(){
+                if(timer){
+                    clearTimeout(timer);
+                }
+                timer=setTimeout(()=>{
+                    fn.call(this);
+                },delay)
+            }
+        }
+
+    </script>
+</body>
+</html>
